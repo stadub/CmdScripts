@@ -21,7 +21,7 @@ EvaluatedRun.cmd notepad C:\text.txt
 ## MsBuild.cmd ##
 Resolves location of the msbuild launcher to run msbuild project
 
-Usage
+*Usage:*
 ```shell
 MsBuild.cmd myproject.project
 ```
