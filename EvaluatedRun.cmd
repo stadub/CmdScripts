@@ -42,7 +42,7 @@ goto :eof
 
 	call :WriteFile 'Execute
     call :WriteFile Set UAC = CreateObject^("Shell.Application"^)
-    call :WriteFile UAC.ShellExecute "%appPath%", "%args%", "%cd%\", "runas", 1
+    call :WriteFile UAC.ShellExecute "%appPath%", "%args%", "", "runas", 1
 	
 	call :WriteFile ' Self Delete
 	call :WriteFile Set fso = CreateObject("Scripting.FileSystemObject")
