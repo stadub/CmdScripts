@@ -1,1 +1,2 @@
+reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v SkypeSecondary /f 2>Nill
 reg add  HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v SkypeSecondary /t REG_SZ /d "\"C:\Program Files (x86)\Skype\Phone\Skype.exe\" /secondary"
