@@ -31,29 +31,28 @@ Rem If error flag set, we do not have admin.
 if '%errorlevel%' NEQ '0' (
     echo Requesting administrative privileges...
     call :UACPrompt %*
-) else ( call :gotAdmin )
+) else ( call :Admin )
 goto :eof
 
 :UACPrompt
-	shift /0
-	echo %args%>%temp%\getadmin.args
+	call :GetGuid NewGuid
+	call :Debug  Writting script to %temp%\getadmin%NewGuid%.vbs
 
-    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-    rem echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
-    echo UAC.ShellExecute "%appPath%", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+	set script=%temp%\getadmin%NewGuid%.vbs
 
-    "%temp%\getadmin.vbs"
+	call :WriteFile 'Execute
+    call :WriteFile Set UAC = CreateObject^("Shell.Application"^)
+    call :WriteFile UAC.ShellExecute "%appPath%", "%args%", "", "runas", 1
+	
+	call :WriteFile ' Self Delete
+	call :WriteFile Set fso = CreateObject("Scripting.FileSystemObject")
+	call :WriteFile Set f1 = fso.GetFile("%script%")
+	call :WriteFile f1.Delete
+
+    "%temp%\getadmin%NewGuid%.vbs"
 goto :eof
 
-:gotAdmin
-	echo "Admin"
-	if exist "%temp%\getadmin.vbs" ( 
-		set /p args=<"%temp%\getadmin.args" 
-		
-		rem del "%temp%\getadmin.args"
-		del "%temp%\getadmin.vbs"
-	)
-	@cd /d "%~dp0"
+:Admin
 	%appPath% %args%
 	pause
 goto :eof
@@ -111,4 +110,9 @@ goto :eof
 	for /f "tokens=2,* delims= " %%a in ("%*") do set ALL_BUT_FIRST=%%b
 	call :Debug Rest args "%ALL_BUT_FIRST%"
 	set %1=%ALL_BUT_FIRST%
+goto :eof
+
+:WriteFile
+	echo %* >>"%script%"
+	rem call :Debug written %* "%script%"
 goto :eof
