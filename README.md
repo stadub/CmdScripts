@@ -17,3 +17,11 @@ Shell script to allow to run commands with evaluated privileges
 ```shell
 EvaluatedRun.cmd notepad C:\text.txt
 ```
+
+## MsBuild.cmd ##
+Resolves location of the msbuild launcher to run msbuild project
+
+Usage
+```shell
+MsBuild.cmd myproject.project
+```
