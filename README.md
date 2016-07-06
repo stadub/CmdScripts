@@ -25,10 +25,10 @@ Resolves location of the msbuild launcher to run msbuild project
 MsBuild.cmd myproject.project
 ```
 
-## add_routes_template.bat ##
+## AddRoutesTemplate.bat ##
 Batch file template to create a routing file
 
 *Usage:*
 ```shell
-add_routes.bat
+AddRoutes.bat
 ```
