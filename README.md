@@ -1,5 +1,5 @@
 # CmdScripts
-A few cmd scripts that makes live easier
+A few cmd scripts that make live easier
 
 ## SkypeSecondary.bat ##
 
@@ -32,3 +32,9 @@ Batch file template to create a routing file
 ```shell
 AddRoutes.bat
 ```
+
+## SvnCheckout.bat ##
+Allows to checkout svn repos via single script.
+Script can be added to Sheduller 
+The "comon" repository that should be injected to the other repositories(external repo)
+```SvnCheckout.cfg``` contain properties to configure script 
