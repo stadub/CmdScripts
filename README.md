@@ -1,7 +1,6 @@
 # CmdScripts
 A few cmd scripts that makes live easier
 
-
 ## SkypeSecondary.bat ##
 
 Adds to autorun entry which runs second skype instance
@@ -24,4 +23,12 @@ Resolves location of the msbuild launcher to run msbuild project
 *Usage:*
 ```shell
 MsBuild.cmd myproject.project
+```
+
+## add_routes_template.bat ##
+Batch file template to create a routing file
+
+*Usage:*
+```shell
+add_routes.bat
 ```
