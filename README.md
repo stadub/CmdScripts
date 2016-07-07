@@ -3,8 +3,11 @@ A few cmd scripts that make live easier
 
 ## SkypeSecondary.bat ##
 
-Adds to autorun entry which runs second skype instance
+Add to autorun entry which runs second skype instance
 
+## skypeAdds.cmd ##
+
+Remove Adds from skype
 
 ## EvaluatedRun.cmd ##
 
