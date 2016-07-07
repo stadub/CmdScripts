@@ -5,7 +5,7 @@ A few cmd scripts that make live easier
 
 Add to autorun entry which runs second skype instance
 
-## skypeAdds.cmd ##
+## SkypeAdds.cmd ##
 
 Remove Adds from skype
 
