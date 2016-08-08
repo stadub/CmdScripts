@@ -55,7 +55,9 @@ otherwise prompts user to initiate config variables
 
 *Config file: [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)*
 ```Output
+
 Init=False
+
 Title=""
 ```
 
