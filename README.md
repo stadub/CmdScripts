@@ -82,7 +82,7 @@ Installer script
 Create installer scrpit based on 7z SFX
 Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to installer.exe
 Installation performs copying arhive content to the %DestDir% folder
-###Requare unpacked http://www.7-zip.org/a/7z1602-extra.7z utils in the /bin directory###
+###Require unpacked http://www.7-zip.org/a/7z1602-extra.7z utils in the /bin directory###
 
 
 *Usage:*
@@ -100,4 +100,8 @@ Installation performs copying arhive content to the %DestDir% folder
 
 `SrcDir="C:\Work\MyApp\Release\bin"` - Directory with application being installed
 
+<<<<<<< HEAD
 `DestDir="C:\Program Files\MyApp"` - Directory Appliction being installed
+=======
+`DestDir="C:\Program Files\MyApp"` - Directory Appliction being installed
+>>>>>>> 415e50cb5205cf3b2fbc62e9893aec3f1cef3b57
