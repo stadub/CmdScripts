@@ -54,9 +54,7 @@ otherwise pormpts user to initlize config varibales
 *Usage:*
 
 [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)
-# Init flag indicate if `config` initalized
 Init=False
-# Config title
 Title=""
 
 ```shell
