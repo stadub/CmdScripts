@@ -1,12 +1,10 @@
 @echo off
 setlocal enablecelayedexpansion
 
-for /f "delims== tokens=1,2" %%a in (SvnCheckout.cfg) do (
-	rem ignore comments that starts with '#'
-	if Not "%variable:~0,1%"=="#" (
-		call :SetVar %%a %%b
-	)
-)
+set Self=%~n0
+set SelfDir=%~dp0
+
+call Config.cmd %Self%
 
 set "DestDir=%USERPROFILE%\Documents\Sources"
 
@@ -59,8 +57,4 @@ set baseDir=%cd%
 		echo %ERRORLEVEL% %%G Debug >> %baseDir%/buildResults.log
 	)
 	popd
-goto :EOF
-
-:SetVar 
-	set %1=%2
 goto :EOF

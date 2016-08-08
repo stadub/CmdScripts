@@ -89,9 +89,15 @@ Installation performs copying arhive content to the %DestDir% folder
 >Build.cmd
 
 *Config file: [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)*
+
 `Init="True"` - Indiate that config file is configures(otherwise script will be started in the interactive mode)
+
 `Title="My App Installer"` - Installer title`
+
 `AppName="MyApp"` - The name of installer executable
+
 `BeginPrompt="Do you want to install MyApp?"` - The prompt will be shown during instalation process
+
 `SrcDir="C:\Work\MyApp\Release\bin"` - Directory with application being installed
+
 `DestDir="C:\Program Files\MyApp"` - Directory Appliction being installed
