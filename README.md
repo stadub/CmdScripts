@@ -53,11 +53,12 @@ otherwise pormpts user to initlize config varibales
 
 *Usage:*
 
+
 [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)
-
+```Output
 Init=False
-
 Title=""
+```
 
 ```shell
 Config.bat build
