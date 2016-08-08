@@ -44,3 +44,32 @@ Script can be added to scheduler.
 The "comon" repository that should be injected to the other repositories(external repo).
 
 ```SvnCheckout.cfg``` contain properties to configure script.
+
+## Config.bat ##
+Configuration scrpit. Used as part of the other scrpits to add script `config` files support
+Check if scrpit `config` initlized(Init flag shoud be set to True)
+in case initalized- create variables from file
+otherwise pormpts user to initlize config varibales
+
+*Usage:*
+
+[Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)
+# Init flag indicate if `config` initalized
+Init=False
+# Config title
+Title=""
+
+```shell
+Config.bat build
+```
+
+```Output
+Write variable Init="True"
+Enter value for Title:My App
+Write variable Title="My App"
+        1 file(s) moved.
+        1 file(s) moved.
+Setting var Init "True"
+Setting var Title "My App"
+```
+
