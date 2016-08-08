@@ -54,13 +54,16 @@ otherwise pormpts user to initlize config varibales
 *Usage:*
 
 [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)
+
 Init=False
+
 Title=""
 
 ```shell
 Config.bat build
 ```
 
+*Output:*
 ```Output
 Write variable Init="True"
 Enter value for Title:My App
