@@ -53,16 +53,13 @@ otherwise pormpts user to initlize config varibales
 
 *Usage:*
 
-
-[Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)
+*Config file: [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)*
 ```Output
 Init=False
 Title=""
 ```
 
-```shell
-Config.bat build
-```
+>Config.bat build
 
 *Output:*
 ```Output
@@ -75,3 +72,26 @@ Setting var Init "True"
 Setting var Title "My App"
 ```
 
+## Copy.bat ##
+Copies current folder content to destanation sep by arg
+>Copy.bat c:\
+
+## Build.cmd ##
+Installer script
+
+Create installer scrpit based on 7z SFX
+Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to installer.exe
+Installation performs copying arhive content to the %DestDir% folder
+###Requare unpacked http://www.7-zip.org/a/7z1602-extra.7z utils in the /bin directory###
+
+
+*Usage:*
+>Build.cmd
+
+*Config file: [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)*
+`Init="True"` - Indiate that config file is configures(otherwise script will be started in the interactive mode)
+`Title="My App Installer"` - Installer title`
+`AppName="MyApp"` - The name of installer executable
+`BeginPrompt="Do you want to install MyApp?"` - The prompt will be shown during instalation process
+`SrcDir="C:\Work\MyApp\Release\bin"` - Directory with application being installed
+`DestDir="C:\Program Files\MyApp"` - Directory Appliction being installed
