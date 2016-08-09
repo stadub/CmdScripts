@@ -3,11 +3,11 @@ A few cmd scripts that make live easier
 
 ## SkypeSecondary.bat ##
 
-Add to autorun entry which runs second skype instance
+Add to autorun entry which runs second Skype instance
 
 ## SkypeAdds.cmd ##
 
-Remove Adds from skype
+Remove Adds from Skype
 
 ## EvaluatedRun.cmd ##
 
@@ -46,10 +46,10 @@ The "comon" repository that should be injected to the other repositories(externa
 ```SvnCheckout.cfg``` contain properties to configure script.
 
 ## Config.bat ##
-Configuration scrpit. Used as part of the other scrpits to add script `config` files support
-Check if scrpit `config` initlized(Init flag shoud be set to True)
-in case initalized- create variables from file
-otherwise pormpts user to initlize config varibales
+Configuration scripts. Used as part of the other scripts to add script `config` files support
+Check if script `config` initlized(Init flag should be set to True)
+in case initialized - create variables from file
+otherwise prompts user to initiate config variables
 
 *Usage:*
 
@@ -73,35 +73,34 @@ Setting var Title "My App"
 ```
 
 ## Copy.bat ##
-Copies current folder content to destanation sep by arg
+Copies current folder content to destination sep by arg
 >Copy.bat c:\
 
 ## Build.cmd ##
 Installer script
 
-Create installer scrpit based on 7z SFX
+Create installer script based on 7z SFX
 Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to installer.exe
-Installation performs copying arhive content to the %DestDir% folder
+Installation performs copying archive content to the %DestDir% folder
 ###Require unpacked http://www.7-zip.org/a/7z1602-extra.7z utils in the /bin directory###
 
 
 *Usage:*
->Build.cmd
+
+>Build.cmd 
+ first run starts interactive configuration mode
+ All succeeding executions runs installer building porcess
 
 *Config file: [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)*
 
-`Init="True"` - Indiate that config file is configures(otherwise script will be started in the interactive mode)
+`Init="True"` - indicate that config file is configures(otherwise script will be started in the interactive mode)
 
 `Title="My App Installer"` - Installer title`
 
 `AppName="MyApp"` - The name of installer executable
 
-`BeginPrompt="Do you want to install MyApp?"` - The prompt will be shown during instalation process
+`BeginPrompt="Do you want to install MyApp?"` - The prompt will be shown during installation process
 
 `SrcDir="C:\Work\MyApp\Release\bin"` - Directory with application being installed
 
-<<<<<<< HEAD
-`DestDir="C:\Program Files\MyApp"` - Directory Appliction being installed
-=======
-`DestDir="C:\Program Files\MyApp"` - Directory Appliction being installed
->>>>>>> 415e50cb5205cf3b2fbc62e9893aec3f1cef3b57
+`DestDir="C:\Program Files\MyApp"` - Directory application being installed
