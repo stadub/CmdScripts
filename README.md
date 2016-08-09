@@ -89,7 +89,7 @@ Installation performs copying archive content to the %DestDir% folder
 
 >Build.cmd 
  first run starts interactive configuration mode
- All succeeding executions runs installer building porcess
+ All succeeding executions runs installer building process
 
 *Config file: [Build.config](https://raw.githubusercontent.com/stadub/CmdScripts/master/Build.config)*
 
