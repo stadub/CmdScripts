@@ -5,7 +5,6 @@ set Source=%1
 set DestDir=%2
 
 set script=%temp%\Unzip.vbs
-del %script%
 
 call :WriteFile Set sh = CreateObject( "Shell.Application" )
 call :WriteFile Set src = sh.NameSpace("%Source%").Items()

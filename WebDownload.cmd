@@ -7,8 +7,6 @@ set DestFile=%2
 
 set script=%temp%\WebDownload.vbs
 
-del %script%
-
 call :WriteFile set xmlhttp = CreateObject("MSXML2.ServerXMLHTTP.6.0")
 call :WriteFile xmlhttp.open "GET", "%Source%", False
 call :WriteFile xmlhttp.send
