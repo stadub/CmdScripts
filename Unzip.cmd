@@ -1,10 +1,11 @@
-set script=%temp%\Unzip.vbs
-
-del %script%
+@echo off
 
 set Source=%1
 
 set DestDir=%2
+
+set script=%temp%\Unzip.vbs
+del %script%
 
 call :WriteFile Set sh = CreateObject( "Shell.Application" )
 call :WriteFile Set src = sh.NameSpace("%Source%").Items()
@@ -17,8 +18,9 @@ call :WriteFile Set f1 = fso.GetFile("%script%")
 call :WriteFile f1.Delete
 call :WriteFile '
 
-
 "%script%"
+
+exit /b
 
 :WriteFile
 	echo %* >>"%script%"

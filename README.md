@@ -165,4 +165,4 @@ Download web resource
 
 ## Unzip.cmd ##
 Extract archive content 
->Unzip.cmd Unzip.cmd %CD%\CmdScripts.zip %CD%
+>Unzip.cmd %CD%\CmdScripts.zip %CD%
