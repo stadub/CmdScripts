@@ -1,6 +1,11 @@
 # CmdScripts
 A few cmd scripts that make live easier
 
+## InstallBin.cmd ##
+Helper script that fetch all scripts(Mainly Build.cmd) dependences from the internet
+>InstallBin.cmd
+
+
 ## SkypeSecondary.bat ##
 
 Add to autorun entry which runs second Skype instance
@@ -96,26 +101,26 @@ Create archive from %SrcDir% content and create SFX installer by combining 7zS.s
 
 Installation performs copying archive content to the %DestDir% folder
 
-*Require unpacked http://www.7-zip.org/a/7z1602-extra.7z utils in the /bin directory*
+*Require unpacked http://www.7-zip.org/a/7z920_extra.7z utils in the /bin directory*
 
 
 *Sample `Build.cmd` Output:*
 ```shell
-Enter Application name:MyApp
+Enter Application name:>        MyApp
 
 Starting installer configuration for MyApp
         1 file(s) copied.
 
-Enter value for BeginPrompt:   Do you want to install MyApp?
+Enter value for BeginPrompt:>   Do you want to install MyApp?
 
-Enter value for SrcDir    c:\Sources\MyApp
+Enter value for SrcDir:>        C:\Sources\MyApp
 
-Enter value for DestDir   C:\Program Files\MyApp
+Enter value for DestDir:>       C:\Program Files\MyApp
         1 file(s) moved.
         1 file(s) moved.
 
-Application installer script generated successfully
-Use "c:\Sources\CmdScripts\Build_MyApp.cmd" for starting installer script
+Application installer script generated successfully.
+Use "c:\Sources\CmdScripts\Build_MyApp.cmd" to start installer script.
 Press any key to continue . . .
 ```
 
@@ -166,3 +171,9 @@ Download web resource
 ## Unzip.cmd ##
 Extract archive content 
 >Unzip.cmd %CD%\CmdScripts.zip %CD%
+
+## AddPath.cmd ##
+Add directory to PATH environment variable
+>AddPath.cmd c:\Sources\CmdScripts
+
+
