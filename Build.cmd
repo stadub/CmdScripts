@@ -79,9 +79,8 @@ exit /b
 
     echo '                                                                    '   
     echo '                                                                    '   
-    echo Application installer script generated successfully
-    echo Use "%SelfDir%\%ScriptName%.cmd" for starting installer script 
+    echo Application installer script generated successfully.
+    echo Use "%SelfDir%\%ScriptName%.cmd" to start installer script.
     pause
     exit /b
 goto :EOF
-
