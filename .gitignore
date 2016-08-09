@@ -1,0 +1,8 @@
+# File types to ignore globally
+.history
+.vscode
+
+#Build scripts & configs
+Build_*.cmd
+Build_*.config
+Build_*.config.back
