@@ -158,3 +158,7 @@ Installer.7z
 c:\Sources\MyApp\MyApp.exe
 Press any key to continue . . .
 ```
+
+## WebDownload.cmd ##
+Download web resource
+>WebDownload.cmd https://github.com/stadub/CmdScripts/archive/master.zip c:\Sources\CmdScripts.zip
