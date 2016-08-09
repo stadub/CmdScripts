@@ -50,7 +50,9 @@ Configuration scripts. Used as part of the other scripts to add script `config` 
 
 
 Has 2 mode:
+
 1) Interactive variables initialization when `config` file variable `Init` set to `False`
+
 2) Creates variables from file when `config` file variable `Init` set to `True`
 
 
@@ -82,38 +84,36 @@ Copies current folder content to destination sep by arg
 ## Build.cmd ##
 Installer script.
 
-Create installer script based on 7z SFX
-Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to AppInstaller.exe
-Installation performs copying archive content to the %DestDir% folder
-*Require unpacked http://www.7-zip.org/a/7z1602-extra.7z utils in the /bin directory*
-
-
 *Usage:*
 
 Create Build installer script:
 >Build.cmd [MyApp] 
 Will generate `Build_MyApp.cmd` script for create installer 
 
+Create installer script based on 7z SFX.
+
+Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to AppInstaller.exe
+
+Installation performs copying archive content to the %DestDir% folder
+
+*Require unpacked http://www.7-zip.org/a/7z1602-extra.7z utils in the /bin directory*
+
+
 *Sample `Build.cmd` Output:*
 ```shell
 Enter Application name:MyApp
 
-'                                                                    '
 Starting installer configuration for MyApp
         1 file(s) copied.
-'                                                                    '
-'                                                                    '
+
 Enter value for BeginPrompt:   Do you want to install MyApp?
-'                                                                    '
-'                                                                    '
+
 Enter value for SrcDir    c:\Sources\MyApp
-'                                                                    '
-'                                                                    '
+
 Enter value for DestDir   C:\Program Files\MyApp
         1 file(s) moved.
         1 file(s) moved.
-'                                                                    '
-'                                                                    '
+
 Application installer script generated successfully
 Use "c:\Sources\CmdScripts\Build_MyApp.cmd" for starting installer script
 Press any key to continue . . .
@@ -121,12 +121,18 @@ Press any key to continue . . .
 
 
 *Config variables*
+
 `BeginPrompt="Do you want to install MyApp?"` - The prompt will be shown during installation process
+
 `SrcDir="C:\Work\MyApp\Release\bin"` - Directory with application being installed
+
 `DestDir="C:\Program Files\MyApp"` - Directory application being installed
+
+
 
 *Sample `Build_InstallerName.cmd` Output:*
 
+```shell
 c:\Sources\CmdScripts\Build.cmd MyApp
 
 7-Zip (A) 9.20  Copyright (c) 1999-2010 Igor Pavlov  2010-11-18
@@ -134,8 +140,6 @@ Scanning
 
 Creating archive Installer.7z
 
-Compressing  web\img\run.png
-Compressing  web\img\stop.png
 Compressing  web\img\back.png
 Compressing  web\img\forward.png
 Compressing  Copy.bat
@@ -149,10 +153,8 @@ c:\Sources\CmdScripts\Bin\7zS.sfx
 Installer.7z
         1 file(s) copied.
         1 file(s) moved.
-'                                                                    '
-'                                                                    '
-'                                                                    '
-'                                                                    '
+
 '                     Installer successfully generated:              '
 c:\Sources\MyApp\MyApp.exe
 Press any key to continue . . .
+```
