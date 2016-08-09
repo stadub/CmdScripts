@@ -162,3 +162,7 @@ Press any key to continue . . .
 ## WebDownload.cmd ##
 Download web resource
 >WebDownload.cmd https://github.com/stadub/CmdScripts/archive/master.zip c:\Sources\CmdScripts.zip
+
+## Unzip.cmd ##
+Extract archive content 
+>Unzip.cmd Unzip.cmd %CD%\CmdScripts.zip %CD%
