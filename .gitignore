@@ -6,3 +6,6 @@
 Build_*.cmd
 Build_*.config
 Build_*.config.back
+
+#Binaries folder
+Bin
