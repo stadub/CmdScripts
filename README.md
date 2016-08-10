@@ -14,6 +14,10 @@ Add to autorun entry which runs second Skype instance
 
 Remove Adds from Skype
 
+## AddContextMenuPowershell.cmd ##
+
+Add "Open PowerShell Here" entry to the Explorer directory context menu
+
 ## EvaluatedRun.cmd ##
 
 Shell script to allow to run commands with evaluated privileges
