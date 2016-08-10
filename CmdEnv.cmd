@@ -26,13 +26,13 @@ doskey uns=Unzip.cmd $*
 echo addpath    AddPath.cmd
 
 echo envs       CmdEnv.cmd
-doskey envs=CmdEnv.cmd
+doskey envs=CmdEnv.cmd  $*
 
-Reg Query "HKCU\Software\Microsoft\Command Processor" /v AutoRun | findstr /I CmdEnv >nul
-if %ErrorLevel% gtr 0 (
-    call AddPath.cmd %SelfDir%
-    Reg Add "HKCU\Software\Microsoft\Command Processor" /f /v AutoRun /t REG_SZ /d "%SelfDir%\CmdEnv.cmd
-    echo "Cmd Autorun scrpit successfully added"
-    pause
-) else (
+FOR /f "delims=;" %%i IN ("%DoskeyScripts%") DO (	
+    if exist "%%i" (
+        echo Adding doskey scripts from %%i
+        call "%%i"
+    )
 )
+
+SET "PATH=%PATH%;%SelfDir%"
