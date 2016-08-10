@@ -3,29 +3,29 @@ A few cmd scripts that make live easier
 
 ## Scripts list:
  Runtime configuration:
-* [InstallBin](#InstallBin.cmd) - download scripts dependencies
-* [CmdAutoRun](#CmdAutoRun.cmd) - add folder to Cmd.exe autostart
-* [CmdEnv](#CmdEnv.cmd)     - set Cmd.exe aliaeses and Path variable
+* [InstallBin](#installbin.cmd) - download scripts dependencies
+* [CmdAutoRun](#cmdautorun.cmd) - add folder to Cmd.exe autostart
+* [CmdEnv](#cmdenv.cmd)     - set Cmd.exe aliaeses and Path variable
 
  One-time usage:
-* [SkypeSecondary](#SkypeSecondary.cmd) - Add to autostart variables second instance of Skype  
-* [SkypeRemoveAdds](#SkypeAdds.cmd)     - Block and remove adds from Skype
-* [AddContextMenuPowershell](#AddContextMenuPowershell.cmd) - Add to Explore context menu "Open folder in Powershell" and "Run Bypass/Admin ps1 script" 
+* [SkypeSecondary](#skypesecondary.cmd) - Add to autostart variables second instance of Skype  
+* [SkypeRemoveAdds](#skypeadds.cmd)     - Block and remove adds from Skype
+* [AddContextMenuPowershell](#addcontextmenupowershell.cmd) - Add to Explore context menu "Open folder in Powershell" and "Run Bypass/Admin ps1 script" 
 
  Utilities:
-* [EvaluatedRun](#EvaluatedRun.cmd) - Execute script/executable as Admin
-* [RunPowershell](#RunPowershell.cmd) - Run powershell script with "Bypass"
-* [MsBuild](#MsBuild.cmd) - Run msbuild.exe
-* [WebDownload](#WebDownload.cmd) - download file from web
-* [Unzip](#Unzip.cmd) - extract archive content
-* [AddPath](#AddPath.cmd) - add directory to Env:Path 
-* [BuildInstaller](#Build.cmd) - Create installer from folder content 
+* [EvaluatedRun](#evaluatedrun.cmd) - Execute script/executable as Admin
+* [RunPowershell](#runpowershell.cmd) - Run powershell script with "Bypass"
+* [MsBuild](#msbuild.cmd) - Run msbuild.exe
+* [WebDownload](#webdownload.cmd) - download file from web
+* [Unzip](#unzip.cmd) - extract archive content
+* [AddPath](#addpath.cmd) - add directory to Env:Path 
+* [BuildInstaller](#build.cmd) - Create installer from folder content 
 
  Script templates:
-* [SvnCheckout](#SvnCheckout.cmd) - Checkout svn(with injections) and build
-* [Config](#Config.cmd) - Init/Load config file
-* [Copy](#Copy.cmd) - Copy folder content
-* [AddRoutesTemplate](#AddRoutesTemplate.cmd) - template for RouteConfig scripts
+* [SvnCheckout](#svncheckout.cmd) - Checkout svn(with injections) and build
+* [Config](#config.cmd) - Init/Load config file
+* [Copy](#copy.cmd) - Copy folder content
+* [AddRoutesTemplate](#addroutestemplate.cmd) - template for RouteConfig scripts
 
 
 ## *Runtime configuration scripts:* ##
