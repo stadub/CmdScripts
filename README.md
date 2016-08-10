@@ -1,13 +1,49 @@
 # CmdScripts
 A few cmd scripts that make live easier
 
-## InstallBin.cmd ##
-Helper script that fetch all scripts(Mainly Build.cmd) dependencies from the internet
+## Scripts list:
+ Runtime configuration:
+* [InstallBin](#InstallBin.cmd) - download scripts dependencies
+* [CmdAutoRun](#CmdAutoRun.cmd) - add folder to Cmd.exe autostart
+* [CmdEnv](#CmdEnv.cmd)     - set Cmd.exe aliaeses and Path variable
+
+ One-time usage:
+* [SkypeSecondary](#SkypeSecondary.cmd) - Add to autostart variables second instance of Skype  
+* [SkypeRemoveAdds](#SkypeAdds.cmd)     - Block and remove adds from Skype
+* [AddContextMenuPowershell](#AddContextMenuPowershell.cmd) - Add to Explore context menu "Open folder in Powershell" and "Run Bypass/Admin ps1 script" 
+
+ Utilities:
+* [EvaluatedRun](#EvaluatedRun.cmd) - Execute script/executable as Admin
+* [RunPowershell](#RunPowershell.cmd) - Run powershell script with "Bypass"
+* [MsBuild](#MsBuild.cmd) - Run msbuild.exe
+* [WebDownload](#WebDownload.cmd) - download file from web
+* [Unzip](#Unzip.cmd) - extract archive content
+* [AddPath](#AddPath.cmd) - add directory to Env:Path 
+* [BuildInstaller](#Build.cmd) - Create installer from folder content 
+
+ Script templates:
+* [SvnCheckout](#SvnCheckout.cmd) - Checkout svn(with injections) and build
+* [Config](#Config.cmd) - Init/Load config file
+* [Copy](#Copy.cmd) - Copy folder content
+* [AddRoutesTemplate](#AddRoutesTemplate.cmd) - template for RouteConfig scripts
+
+
+## *Runtime configuration scripts:* ##
+
+## InstallBin.cmd
+Helper script that fetch all scripts(Mainly [Build.cmd](#Build.cmd)) dependencies from the internet
 >InstallBin.cmd
 
-## CmdEnv.cmd ##
+## CmdAutoRun.cmd
+Add `CmdEnv.cmd` to Command line autorun.
+
+## CmdEnv.cmd
 Helper script install aliases for scripts and insert scripts directory to the Path variable.
+Also loads aliases from files pointed in the `DoskeyScripts` env variale
 >InstallBin.cmd
+
+
+## *One-time usage useful utilities:* ##
 
 ## SkypeSecondary.bat ##
 
@@ -20,6 +56,8 @@ Remove Adds from Skype
 ## AddContextMenuPowershell.cmd ##
 
 Add "Open PowerShell Here" entry to the Explorer directory context menu
+
+## *Utilities:* ##
 
 ## EvaluatedRun.cmd ##
 
@@ -49,6 +87,72 @@ Resolves location of the msbuild launcher to run msbuild project
 MsBuild.cmd myproject.project
 ```
 
+## Copy.bat ##
+Copies current folder content to destination sep by arg
+>Copy.bat c:\
+
+
+## WebDownload.cmd ##
+Download web resource
+>WebDownload.cmd https://github.com/stadub/CmdScripts/archive/master.zip c:\Sources\CmdScripts.zip
+
+## Unzip.cmd ##
+Extract archive content 
+>Unzip.cmd %CD%\CmdScripts.zip %CD%
+
+## AddPath.cmd ##
+Add directory to PATH environment variable
+>AddPath.cmd c:\Sources\CmdScripts
+
+## Build ##
+Installer script.
+
+*Require unpacked http://www.7-zip.org/a/7z920_extra.7z utils in the /bin directory.*
+
+*##To install dependencies run `InstallBin.cmd` before installer script execution##*
+
+
+*Usage:*
+
+To create installer generator script run:
+>Build.cmd [MyApp] 
+
+*Sample `Build.cmd` Output:*
+```shell
+Enter Application name:>        MyApp
+Starting installer configuration for MyApp
+Enter value for BeginPrompt:>   Do you want to install MyApp?
+Enter value for SrcDir:>        C:\Sources\MyApp
+Enter value for DestDir:>       C:\Program Files\MyApp
+
+Application installer script generated successfully.
+Use "c:\Sources\CmdScripts\Build_MyApp.cmd" to start installer script.
+Press any key to continue . . .
+```
+
+*Config variables*
+
+`BeginPrompt="Do you want to install MyApp?"` - The prompt will be shown during installation process
+
+`SrcDir="C:\Work\MyApp\Release\bin"` - Directory with application being installed
+
+`DestDir="C:\Program Files\MyApp"` - Directory application being installed
+
+Description:
+Create installer script based on 7z SFX.
+
+Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to AppInstaller.exe
+
+Installation performs copying archive content to the %DestDir% folder
+
+
+
+
+
+
+
+## *Script templates and script libraries:* ##
+
 ## AddRoutesTemplate.bat ##
 Batch file template to create a routing file
 
@@ -68,7 +172,6 @@ The "comon" repository that should be injected to the other repositories(externa
 
 ## Config.bat ##
 Configuration scripts. Used as part of the other scripts to add script `config` files support.
-
 
 Has 2 mode:
 
@@ -97,99 +200,3 @@ Write variable Title="My App"
 Setting var Init "True"
 Setting var Title "My App"
 ```
-
-## Copy.bat ##
-Copies current folder content to destination sep by arg
->Copy.bat c:\
-
-## Build.cmd ##
-Installer script.
-
-*Usage:*
-
-Create Build installer script:
->Build.cmd [MyApp] 
-Will generate `Build_MyApp.cmd` script for create installer 
-
-Create installer script based on 7z SFX.
-
-Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to AppInstaller.exe
-
-Installation performs copying archive content to the %DestDir% folder
-
-*Require unpacked http://www.7-zip.org/a/7z920_extra.7z utils in the /bin directory*
-
-
-*Sample `Build.cmd` Output:*
-```shell
-Enter Application name:>        MyApp
-
-Starting installer configuration for MyApp
-        1 file(s) copied.
-
-Enter value for BeginPrompt:>   Do you want to install MyApp?
-
-Enter value for SrcDir:>        C:\Sources\MyApp
-
-Enter value for DestDir:>       C:\Program Files\MyApp
-        1 file(s) moved.
-        1 file(s) moved.
-
-Application installer script generated successfully.
-Use "c:\Sources\CmdScripts\Build_MyApp.cmd" to start installer script.
-Press any key to continue . . .
-```
-
-
-*Config variables*
-
-`BeginPrompt="Do you want to install MyApp?"` - The prompt will be shown during installation process
-
-`SrcDir="C:\Work\MyApp\Release\bin"` - Directory with application being installed
-
-`DestDir="C:\Program Files\MyApp"` - Directory application being installed
-
-
-
-*Sample `Build_InstallerName.cmd` Output:*
-
-```shell
-c:\Sources\CmdScripts\Build.cmd MyApp
-
-7-Zip (A) 9.20  Copyright (c) 1999-2010 Igor Pavlov  2010-11-18
-Scanning
-
-Creating archive Installer.7z
-
-Compressing  web\img\back.png
-Compressing  web\img\forward.png
-Compressing  Copy.bat
-Compressing  web\index.html
-
-Everything is Ok
-c:\Sources\MyApp\Install
-Writing Installer config
-c:\Sources\CmdScripts\Bin\7zS.sfx
-7zConfig
-Installer.7z
-        1 file(s) copied.
-        1 file(s) moved.
-
-'                     Installer successfully generated:              '
-c:\Sources\MyApp\MyApp.exe
-Press any key to continue . . .
-```
-
-## WebDownload.cmd ##
-Download web resource
->WebDownload.cmd https://github.com/stadub/CmdScripts/archive/master.zip c:\Sources\CmdScripts.zip
-
-## Unzip.cmd ##
-Extract archive content 
->Unzip.cmd %CD%\CmdScripts.zip %CD%
-
-## AddPath.cmd ##
-Add directory to PATH environment variable
->AddPath.cmd c:\Sources\CmdScripts
-
-
