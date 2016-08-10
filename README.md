@@ -2,17 +2,13 @@
 A few cmd scripts that make live easier
 
 ## Scripts list:
- Runtime configuration:
-* [InstallBin](#installbincmd) - download scripts dependencies
-* [CmdAutoRun](#cmdautoruncmd) - add folder to Cmd.exe autostart
-* [CmdEnv](#cmdenvcmd)     - set Cmd.exe aliaeses and Path variable
 
- One-time usage:
+ ### One-time usage:
 * [SkypeSecondary](#skypesecondarycmd) - Add to autostart variables second instance of Skype  
 * [SkypeRemoveAdds](#skypeaddscmd)     - Block and remove adds from Skype
 * [AddContextMenuPowershell](#addcontextmenupowershellcmd) - Add to Explore context menu "Open folder in Powershell" and "Run Bypass/Admin ps1 script" 
 
- Utilities:
+ ### Utilities:
 * [EvaluatedRun](#evaluatedruncmd) - Execute script/executable as Admin
 * [RunPowershell](#runpowershellcmd) - Run powershell script with "Bypass"
 * [MsBuild](#msbuildcmd) - Run msbuild.exe
@@ -21,7 +17,12 @@ A few cmd scripts that make live easier
 * [AddPath](#addpathcmd) - add directory to Env:Path 
 * [BuildInstaller](#buildcmd) - Create installer from folder content 
 
- Script templates:
+ ### Runtime configuration:
+* [InstallBin](#installbincmd) - download scripts dependencies
+* [CmdAutoRun](#cmdautoruncmd) - add folder to Cmd.exe autostart
+* [CmdEnv](#cmdenvcmd)     - set Cmd.exe aliaeses and Path variable
+
+ ### Script templates:
 * [SvnCheckout](#svncheckoutcmd) - Checkout svn(with injections) and build
 * [Config](#configcmd) - Init/Load config file
 * [Copy](#copycmd) - Copy folder content
