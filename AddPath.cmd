@@ -18,6 +18,9 @@ REG query HKCU\Environment /v Path>env.tmp
 
 for /f "tokens=2,* delims= " %%a in (env.tmp) do set AllButFirst=%%b
 
-REG ADD HKCU\Environment /v Path /t REG_EXPAND_SZ /d "%AllButFirst%;%~1" /f
+REG ADD HKCU\Environment /f /v Path /t REG_EXPAND_SZ /d "%AllButFirst%;%~1
 
 del env.tmp
+rem echo REG ADD HKCU\Environment  /f /v Path /t REG_EXPAND_SZ /d "%AllButFirst%;%~1
+pause 
+

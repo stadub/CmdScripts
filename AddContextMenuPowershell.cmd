@@ -19,6 +19,6 @@ Reg Add %Ps1Shell%\OpenBypass /ve /t REG_SZ /d "Run with PowerShell (Bypass)" /f
 Reg Add %Ps1Shell%\OpenBypass\command /ve /t REG_SZ /d "%PowershellPath% -executionpolicy bypass -File  \"%%1\"}" /f
 
 Reg Add %Ps1Shell%\OpenAdmin /ve /t REG_SZ /d "Run with PowerShell (Admin)" /f
-Reg Add %Ps1Shell%\OpenAdmin\command /ve /t REG_SZ /d "%PowershellPath% -executionpolicy bypass -Command {start-Process %PowershellPath% -NoNewWindow  -Wait  -Verb RunAs -ArgumentList -ExecutionPolicy RemoteSigned -File  \"%%1\"" /f
+Reg Add %Ps1Shell%\OpenAdmin\command /ve /t REG_SZ /d "%PowershellPath% -executionpolicy bypass -Command {start-Process %PowershellPath% -NoNewWindow  -Wait  -Verb RunAs -ArgumentList -ExecutionPolicy RemoteSigned -File  \"%%1\"}" /f
 
 rem Reg Add %Ps1Shell%\OpenAdmin\command /ve /t REG_SZ /d "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command 'if((Get-ExecutionPolicy ) -ne AllSigned) { Set-ExecutionPolicy -Scope Process Bypass }; & \'%%1%\''" /f

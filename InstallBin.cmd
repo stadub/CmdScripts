@@ -39,7 +39,7 @@ copy "%DownloadDir%\7zX\7zS.sfx" "%BinDir%"
 
 rmdir "%DownloadDir%" /S /Q 
 
-AddPath.cmd "%SelfDir%"
+AddPath.cmd %SelfDir%
 
 echo "Done!"
 pause
