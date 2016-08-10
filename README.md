@@ -28,6 +28,15 @@ Shell script to allow to run commands with evaluated privileges
 ```shell
 EvaluatedRun.cmd notepad C:\text.txt
 ```
+## RunPowershell.cmd ##
+
+Script is intended to run Powershell scripts from command line.
+Allows to avoid 'execution of scripts is disabled on this system' message.
+
+*Example:*
+```PowerShell
+RunPowershell.cmd ls
+```
 
 ## MsBuild.cmd ##
 Resolves location of the msbuild launcher to run msbuild project
