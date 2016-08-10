@@ -2,9 +2,12 @@
 A few cmd scripts that make live easier
 
 ## InstallBin.cmd ##
-Helper script that fetch all scripts(Mainly Build.cmd) dependences from the internet
+Helper script that fetch all scripts(Mainly Build.cmd) dependencies from the internet
 >InstallBin.cmd
 
+## CmdEnv.cmd ##
+Helper script install aliases for scripts and insert scripts directory to the Path variable.
+>InstallBin.cmd
 
 ## SkypeSecondary.bat ##
 
