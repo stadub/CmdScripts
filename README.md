@@ -3,35 +3,35 @@ A few cmd scripts that make live easier
 
 ## Scripts list:
  Runtime configuration:
-* [InstallBin](#installbin.cmd) - download scripts dependencies
-* [CmdAutoRun](#cmdautorun.cmd) - add folder to Cmd.exe autostart
-* [CmdEnv](#cmdenv.cmd)     - set Cmd.exe aliaeses and Path variable
+* [InstallBin](#installbincmd) - download scripts dependencies
+* [CmdAutoRun](#cmdautoruncmd) - add folder to Cmd.exe autostart
+* [CmdEnv](#cmdenvcmd)     - set Cmd.exe aliaeses and Path variable
 
  One-time usage:
-* [SkypeSecondary](#skypesecondary.cmd) - Add to autostart variables second instance of Skype  
-* [SkypeRemoveAdds](#skypeadds.cmd)     - Block and remove adds from Skype
-* [AddContextMenuPowershell](#addcontextmenupowershell.cmd) - Add to Explore context menu "Open folder in Powershell" and "Run Bypass/Admin ps1 script" 
+* [SkypeSecondary](#skypesecondarycmd) - Add to autostart variables second instance of Skype  
+* [SkypeRemoveAdds](#skypeaddscmd)     - Block and remove adds from Skype
+* [AddContextMenuPowershell](#addcontextmenupowershellcmd) - Add to Explore context menu "Open folder in Powershell" and "Run Bypass/Admin ps1 script" 
 
  Utilities:
-* [EvaluatedRun](#evaluatedrun.cmd) - Execute script/executable as Admin
-* [RunPowershell](#runpowershell.cmd) - Run powershell script with "Bypass"
-* [MsBuild](#msbuild.cmd) - Run msbuild.exe
-* [WebDownload](#webdownload.cmd) - download file from web
-* [Unzip](#unzip.cmd) - extract archive content
-* [AddPath](#addpath.cmd) - add directory to Env:Path 
-* [BuildInstaller](#build.cmd) - Create installer from folder content 
+* [EvaluatedRun](#evaluatedruncmd) - Execute script/executable as Admin
+* [RunPowershell](#runpowershellcmd) - Run powershell script with "Bypass"
+* [MsBuild](#msbuildcmd) - Run msbuild.exe
+* [WebDownload](#webdownloadcmd) - download file from web
+* [Unzip](#unzipcmd) - extract archive content
+* [AddPath](#addpathcmd) - add directory to Env:Path 
+* [BuildInstaller](#buildcmd) - Create installer from folder content 
 
  Script templates:
-* [SvnCheckout](#svncheckout.cmd) - Checkout svn(with injections) and build
-* [Config](#config.cmd) - Init/Load config file
-* [Copy](#copy.cmd) - Copy folder content
-* [AddRoutesTemplate](#addroutestemplate.cmd) - template for RouteConfig scripts
+* [SvnCheckout](#svncheckoutcmd) - Checkout svn(with injections) and build
+* [Config](#configcmd) - Init/Load config file
+* [Copy](#copycmd) - Copy folder content
+* [AddRoutesTemplate](#addroutestemplatecmd) - template for RouteConfig scripts
 
 
 ## *Runtime configuration scripts:* ##
 
 ## InstallBin.cmd
-Helper script that fetch all scripts(Mainly [Build.cmd](#Build.cmd)) dependencies from the internet
+Helper script that fetch all scripts(Mainly [Build.cmd](#buildcmd)) dependencies from the internet
 >InstallBin.cmd
 
 ## CmdAutoRun.cmd
@@ -47,22 +47,22 @@ Also loads aliases from files pointed in the `DoskeyScripts` env variale
 
 ## SkypeSecondary.bat ##
 
-Add to autorun entry which runs second Skype instance
+Add to autorun entry which runs second `Skype` instance
 
 ## SkypeAdds.cmd ##
 
-Remove Adds from Skype
+Remove Adds from `Skype`
 
 ## AddContextMenuPowershell.cmd ##
 
-Add "Open PowerShell Here" entry to the Explorer directory context menu
+Add `Open PowerShell Here` entry to the `Explorer` directory context menu
 
 ## *Utilities:* ##
 
 ## EvaluatedRun.cmd ##
 
 Shell script to allow to run commands with evaluated privileges
-- Automatically resolves path to executable (from %Path% variable)
+- Automatically resolves path to executable (from `%Path%` variable)
 - In case of Admin shell(or disable UAC) just starts command
 
 *Example:*
@@ -72,7 +72,7 @@ EvaluatedRun.cmd notepad C:\text.txt
 ## RunPowershell.cmd ##
 
 Script is intended to run Powershell scripts from command line.
-Allows to avoid 'execution of scripts is disabled on this system' message.
+Allows to avoid `execution of scripts is disabled on this system` message.
 
 *Example:*
 ```PowerShell
@@ -88,7 +88,7 @@ MsBuild.cmd myproject.project
 ```
 
 ## Copy.bat ##
-Copies current folder content to destination sep by arg
+Copies current folder content to the folder set by arg
 >Copy.bat c:\
 
 
@@ -109,7 +109,7 @@ Installer script.
 
 *Require unpacked http://www.7-zip.org/a/7z920_extra.7z utils in the /bin directory.*
 
-*##To install dependencies run `InstallBin.cmd` before installer script execution##*
+*##To install dependencies run [InstallBin.com](#installbincmd) before installer script execution##*
 
 
 *Usage:*
@@ -141,14 +141,9 @@ Press any key to continue . . .
 Description:
 Create installer script based on 7z SFX.
 
-Create archive from %SrcDir% content and create SFX installer by combining 7zS.sfx + 7zConfig + Installer.7z to AppInstaller.exe
+Create archive from %SrcDir% content and create SFX installer by combining `7zS.sfx` + `7zConfig` + `Installer.7z` to `AppInstaller.exe`
 
-Installation performs copying archive content to the %DestDir% folder
-
-
-
-
-
+Installation performs copying archive content to the `%DestDir%` folder
 
 
 ## *Script templates and script libraries:* ##
@@ -162,7 +157,7 @@ AddRoutes.bat
 ```
 
 ## SvnCheckout.bat ##
-Allows to checkout svn repos via single script.
+Allows to checkout `svn repos` via single script.
 
 Script can be added to scheduler. 
 
