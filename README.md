@@ -3,12 +3,12 @@ A few cmd scripts that make live easier
 
 ## Scripts list:
 
- ### One-time usage:
+### One-time usage:
 * [SkypeSecondary](#skypesecondarycmd) - Add to autostart variables second instance of Skype  
 * [SkypeRemoveAdds](#skypeaddscmd)     - Block and remove adds from Skype
 * [AddContextMenuPowershell](#addcontextmenupowershellcmd) - Add to Explore context menu "Open folder in Powershell" and "Run Bypass/Admin ps1 script" 
 
- ### Utilities:
+### Utilities:
 * [EvaluatedRun](#evaluatedruncmd) - Execute script/executable as Admin
 * [RunPowershell](#runpowershellcmd) - Run powershell script with "Bypass"
 * [MsBuild](#msbuildcmd) - Run msbuild.exe
@@ -17,19 +17,19 @@ A few cmd scripts that make live easier
 * [AddPath](#addpathcmd) - add directory to Env:Path 
 * [BuildInstaller](#buildcmd) - Create installer from folder content 
 
- ### Runtime configuration:
+### Runtime configuration:
 * [InstallBin](#installbincmd) - download scripts dependencies
 * [CmdAutoRun](#cmdautoruncmd) - add folder to Cmd.exe autostart
 * [CmdEnv](#cmdenvcmd)     - set Cmd.exe aliaeses and Path variable
 
- ### Script templates:
+### Script templates:
 * [SvnCheckout](#svncheckoutcmd) - Checkout svn(with injections) and build
 * [Config](#configcmd) - Init/Load config file
 * [Copy](#copycmd) - Copy folder content
 * [AddRoutesTemplate](#addroutestemplatecmd) - template for RouteConfig scripts
 
 
-## *Runtime configuration scripts:* ##
+#*Runtime configuration scripts:*
 
 ## InstallBin.cmd
 Helper script that fetch all scripts(Mainly [Build.cmd](#buildcmd)) dependencies from the internet
@@ -44,7 +44,7 @@ Also loads aliases from files pointed in the `DoskeyScripts` env variale
 >InstallBin.cmd
 
 
-## *One-time usage useful utilities:* ##
+#*One-time usage useful utilities:* #
 
 ## SkypeSecondary.bat ##
 
@@ -58,7 +58,7 @@ Remove Adds from `Skype`
 
 Add `Open PowerShell Here` entry to the `Explorer` directory context menu
 
-## *Utilities:* ##
+# *Utilities:* #
 
 ## EvaluatedRun.cmd ##
 
@@ -147,7 +147,7 @@ Create archive from %SrcDir% content and create SFX installer by combining `7zS.
 Installation performs copying archive content to the `%DestDir%` folder
 
 
-## *Script templates and script libraries:* ##
+# *Script templates and script libraries:* #
 
 ## AddRoutesTemplate.bat ##
 Batch file template to create a routing file
