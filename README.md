@@ -1,7 +1,8 @@
 # CmdScripts
 A Cmd scripts which makes life easier.
 
-The easiest way to get all the scripts is press Win+R keyboard hotkeys and insert into window following script:
+The easiest way to get all the scripts is press Win+R keyboard hotkeys and insert into the window entire script provided below:
+
 ```powershell.exe -executionpolicy bypass "$dst=Read-Host 'Enter install folder:';$repo='https://github.com/stadub/CmdScripts/archive/master.zip';$f=[System.IO.Path]::GetTempFileName()+'.zip';New-Object System.Net.WebClient|%{$_.DownloadFile($repo,$f);};$sh=New-Object -ComObject Shell.Application;$ar=$sh.NameSpace($f).Items();$af=$ar.Item(0).GetFolder.Items();mkdir $dst;$d=$sh.NameSpace($dst);$d.CopyHere($af, 272);& $dst\InstallBin.cmd;Write-Warning 'Add scripts to autorun?'  -warningaction Inquire;&  $dst\CmdAutoRun.cmd;pause"```
 
 ## Scripts list:
