@@ -1,12 +1,13 @@
 
 @echo off
-if exist Bin (
-    exit /b
-)
 
 set SelfDir=%~dp0
 set DownloadDir=%~dp0Download
 set BinDir=%~dp0Bin
+
+if exist %SelfDir%\Bin (
+    exit /b
+)
 
 echo %DownloadDir%\7za920.zip
 
@@ -41,4 +42,3 @@ rmdir "%DownloadDir%" /S /Q
 
 echo "Done!"
 pause
-
