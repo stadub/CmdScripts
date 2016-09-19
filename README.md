@@ -75,7 +75,6 @@ Shell script to allow to run commands with evaluated privileges
 EvaluatedRun.cmd notepad C:\text.txt
 ```
 
-* [Which.cmd] (#whichcmd) - Determine file full path(linux `Which` command analogue)
 ## Which.cmd ##
 
 Shell script to resolve path to executable (bat/cmd/exe files supported)
