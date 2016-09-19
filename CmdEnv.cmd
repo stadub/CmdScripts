@@ -26,6 +26,9 @@ doskey uns=Unzip.cmd $*
 echo addpath    AddPath.cmd
 
 echo envs       CmdEnv.cmd
+
+echo which       Which.cmd
+
 doskey envs=CmdEnv.cmd  $*
 
 FOR /f "delims=;" %%i IN ("%DoskeyScripts%") DO (	

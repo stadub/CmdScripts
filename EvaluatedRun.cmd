@@ -15,7 +15,7 @@ call :debug App "%program%" has args: "%args%"
 
 call :ResolvePath appPath
 
-if '%appPath%' == '' (
+if "%appPath%" == "" (
 	echo Error: No application found >&2
 	goto Usage
 )
@@ -27,11 +27,16 @@ echo Executing {%appPath%}
 Rem  Check for permissions
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 
+set "adminMode=%errorlevel%"
+echo %adminMode%
 Rem If error flag set, we do not have admin.
-if '%errorlevel%' NEQ '0' (
+if not "%adminMode%" == "0" (
     echo Requesting administrative privileges...
     call :UACPrompt %*
-) else ( call :Admin )
+) else (
+	echo Already admin
+	call :Admin
+)
 goto :eof
 
 :UACPrompt
@@ -53,36 +58,21 @@ goto :eof
 goto :eof
 
 :Admin
-	%appPath% %args%
+
+	call "%appPath% %args%"
+	
 	pause
 goto :eof
 
 
 :ResolvePath
+
 	call :Debug Resolving path 
+	call Which.cmd %program% appPath
+	set appPathFinder="Which.cmd %program% appPath"
 
-	rem search in EvalRun script dir 
-	if exist "%~dp0\%program%" (
-		call :Debug Found in the script dir {%~dp0}
-		set "%1=%~dp0%program%"
-		goto :eof
-	)
-
-	FOR /f "delims=;" %%i IN ("%PATH%") DO (	
-		if exist "%%i\%program%" (
-			call :Debug Found in system dir "%%i"
-			set "%1=%%i\%program%"
-			goto :eof
-		)
-	)
-	FOR /f "delims=;" %%i IN ("%PATH%") DO (	
-		if exist "%%i\%program%.exe" (
-			call :Debug Found "%program%.exe" in system dir "%%i" 
-			set "%1=%%i\%program%.exe"
-			goto :eof
-		)
-	)
-	set "%1="
+	FOR /F "delims=" %%i IN ('%appPathFinder%') DO set "appPath=%%i"
+	set "appPath=%appPath:"=%"
 goto :eof
 
 :Usage

@@ -10,6 +10,7 @@ A Cmd scripts which makes life easier.
 
 ### Utilities:
 * [EvaluatedRun](#evaluatedruncmd) - Execute script/executable as Admin
+* [Which.cmd] (#whichcmd) - Determine file full path(linux `Which.cmd` analogue)
 * [RunPowershell](#runpowershellcmd) - Run powershell script with "Bypass"
 * [MsBuild](#msbuildcmd) - Run msbuild.exe
 * [WebDownload](#webdownloadcmd) - download file from web
@@ -73,6 +74,17 @@ Shell script to allow to run commands with evaluated privileges
 ```shell
 EvaluatedRun.cmd notepad C:\text.txt
 ```
+
+* [Which.cmd] (#whichcmd) - Determine file full path(linux `Which` command analogue)
+## Which.cmd ##
+
+Shell script to resolve path to executable (bat/cmd/exe files supported)
+
+*Example:*
+```shell
+Which.cmd notepad
+```
+
 ## RunPowershell.cmd ##
 
 Script is intended to run Powershell scripts from command line.
