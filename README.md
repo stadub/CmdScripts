@@ -10,7 +10,9 @@ A Cmd scripts which makes life easier.
 
 ### Utilities:
 * [EvaluatedRun](#evaluatedruncmd) - Execute script/executable as Admin
-* [Which.cmd] (#whichcmd) - Determine file full path(linux `Which.cmd` analogue)
+* [Which.cmd] (#whichcmd) - Determine file full path(linux `Which` analogue)
+* [PKill.cmd] (#pkillcmd) - Kill windows app by name(`taskkill` simple wrapper to be more like linux `pkill` command)
+* [Ps.cmd] (#pscmd) - List process (`tasklist` simple wrapper to be more like linux `ps` command)
 * [RunPowershell](#runpowershellcmd) - Run powershell script with "Bypass"
 * [MsBuild](#msbuildcmd) - Run msbuild.exe
 * [WebDownload](#webdownloadcmd) - download file from web
@@ -75,7 +77,6 @@ Shell script to allow to run commands with evaluated privileges
 EvaluatedRun.cmd notepad C:\text.txt
 ```
 
-* [Which.cmd] (#whichcmd) - Determine file full path(linux `Which` command analogue)
 ## Which.cmd ##
 
 Shell script to resolve path to executable (bat/cmd/exe files supported)
@@ -84,6 +85,27 @@ Shell script to resolve path to executable (bat/cmd/exe files supported)
 ```shell
 Which.cmd notepad
 ```
+
+## PKill.cmd ##
+
+Kill windows app by name.
+Just handy `taskkill` wrapper.
+
+*Example:*
+```shell
+pkill.cmd note*
+```
+
+## Ps.cmd ##
+
+List process.
+Just handy `tasklist` wrapper.
+
+*Example:*
+```shell
+ps.cmd note*
+```
+
 
 ## RunPowershell.cmd ##
 
